@@ -17,9 +17,11 @@ let n2: number = 2;
 // Import / Export Es6
 
 import {  somar, subtrair, multiplicar  } from './matematica';
+
+console.log(`Soma: ${somar(n1, n2)}`);
+console.log(`Subtrair: ${subtrair(n1, n2)}`);
+
 import validator from 'validator';
 
-// console.log(`Soma: ${somar(n1, n2)}`);
-// console.log(`Subtrair: ${subtrair(n1, n2)}`);
-
 console.log(validator.isEmail('fo@bar.com'));
+console.log(validator.isIP('127.0.0.1'));
