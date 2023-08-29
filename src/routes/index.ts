@@ -4,6 +4,13 @@ const router = Router();
 
 router.get('/', (req: Request, res: Response)=>{
 
+    let age: number = 90;
+    let showOld: boolean = false;
+
+    if(age > 50) {
+        showOld = true;
+    }
+
     let user = {
         name : 'Igor',
         lastname: 'Simões da Silveira',
@@ -11,7 +18,9 @@ router.get('/', (req: Request, res: Response)=>{
     };
 
     res.render('home', {
-        user
+        user,
+        showWelcome: true,
+        showOld
     });
 });
 

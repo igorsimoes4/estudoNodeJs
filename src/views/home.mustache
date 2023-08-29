@@ -5,6 +5,12 @@
     <body>
         <h1>Titulo</h1>
         <hr/>
-        <p>Olá {{user.name}} {{user.lastname}} você tem {{user.age}} anos</p>
+        {{#showWelcome}}
+            <p>Olá {{user.name}} {{user.lastname}} você tem {{user.age}} anos</p>
+        {{/showWelcome}}
+
+        {{#showOld}}
+            <P>Você é velho</p>
+        {{/showOld}}
     </body>
 </html>
