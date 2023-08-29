@@ -9,8 +9,24 @@
             <p>Olá {{user.name}} {{user.lastname}} você tem {{user.age}} anos</p>
         {{/showWelcome}}
 
+        {{! Exibição condicional }}
         {{#showOld}}
             <P>Você é velho</p>
         {{/showOld}}
+
+        {{! Exibição Lista }}
+        <h1>Produtos</h1>
+        <ul>
+            {{#products}}
+                <li>{{ title }} - R$ {{ price }}</li>
+            {{/products }}
+        </ul>
+
+        {{! Lista comum }}
+        <ul>
+            {{#lista}}
+                <li>{{ . }}</li>
+            {{/lista }}
+        </ul>
     </body>
 </html>

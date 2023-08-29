@@ -20,7 +20,18 @@ router.get('/', (req: Request, res: Response)=>{
     res.render('home', {
         user,
         showWelcome: true,
-        showOld
+        showOld,
+        products: [
+            {title: 'Produto X', price: 10},
+            {title: 'Produto Y', price: 15},
+            {title: 'Produto Z', price: 20}
+        ],
+        lista: [
+            'Alguma coisa legal',
+            'Alguma coisa legal',
+            'Alguma coisa legal',
+            'Alguma coisa legal'
+        ]
     });
 });
 
