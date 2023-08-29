@@ -2,8 +2,12 @@ import express, { Request, Response } from 'express';
 import mainRoutes from './routes/index';
 import noticiaRoutes from './routes/noticia';
 import vooRoutes from './routes/voo';
+import path from 'path';
 
 const server = express();
+
+// Definindo rota para arquivo Publicos //
+server.use(express.static( path.join(__dirname, '../public') ));
 
 // Rotas Principais //
 server.use(mainRoutes);
