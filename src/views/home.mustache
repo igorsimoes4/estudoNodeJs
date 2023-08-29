@@ -9,10 +9,14 @@
             <p>Olá {{user.name}} {{user.lastname}} você tem {{user.age}} anos</p>
         {{/showWelcome}}
 
+        <hr/>
         {{! Exibição condicional }}
         {{#showOld}}
             <P>Você é velho</p>
         {{/showOld}}
+
+
+        <hr/>
 
         {{! Exibição Lista }}
         <h1>Produtos</h1>
@@ -22,11 +26,17 @@
             {{/products }}
         </ul>
 
+        <hr/>
+
         {{! Lista comum }}
         <ul>
             {{#lista}}
                 <li>{{ . }}</li>
             {{/lista }}
+            {{! Quando não tiver nada na lista = else }}
+            {{^lista}}
+                Não tem nada na lista
+            {{/lista}}
         </ul>
     </body>
 </html>
