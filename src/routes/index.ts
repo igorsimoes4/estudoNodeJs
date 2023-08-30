@@ -17,7 +17,7 @@ router.get('/', (req: Request, res: Response)=>{
         age: 23
     };
 
-    res.render('home', {
+    res.render('pages/home', {
         user,
         showWelcome: true,
         showOld,
@@ -36,11 +36,11 @@ router.get('/', (req: Request, res: Response)=>{
 });
 
 router.get('/contato', (req: Request, res: Response)=>{
-    res.send('Formulário de Contato');
+    res.render('pages/contato');
 });
 
 router.get('/sobre', (req: Request, res: Response)=>{
-    res.send('Sobre');
+    res.render('pages/sobre');
 });
 
 export default router;
