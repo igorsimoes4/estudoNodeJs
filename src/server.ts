@@ -20,6 +20,9 @@ server.engine('mustache', mustache());
 // Definindo rota para arquivo Publicos //
 server.use(express.static( path.join(__dirname, '../public') ));
 
+// Habilitando o servidor para Receber dados via POST
+server.use(express.urlencoded({extended: true}))
+
 // Rotas Principais //
 server.use(mainRoutes);
 // Rotas para Noticias //
