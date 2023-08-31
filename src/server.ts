@@ -1,6 +1,9 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 
+// Importanto as Variaveis de sistema
+import dotenv from 'dotenv';
+
 // Importando o Template Engine //
 import mustache from 'mustache-express';
 
@@ -9,6 +12,8 @@ import mainRoutes from './routes/index';
 import noticiaRoutes from './routes/noticia';
 import vooRoutes from './routes/voo';
 
+
+dotenv.config();
 
 const server = express();
 
@@ -35,8 +40,5 @@ server.use((req: Request, res: Response)=>{
     res.status(404).send('Página não Encontrada!');
 });
 
-
-
-
-// Cria o Server //
-server.listen(3000);
+// Seto a porta do servidor //
+server.listen(process.env.PORT);
