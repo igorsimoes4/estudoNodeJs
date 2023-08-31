@@ -1,5 +1,8 @@
 import {  Request, Response  } from 'express';
 
+// Importando o Model Product
+import {  Product  } from '../models/Product';
+
 export const home = ( req: Request, res: Response ) => {
 
     let age: number = 90;
@@ -15,15 +18,15 @@ export const home = ( req: Request, res: Response ) => {
         age: 23
     };
 
+    let list = Product.getall();
+    let expensiveList = Product.getPriceAfter(12);
+
     res.render('pages/home', {
         user,
         showWelcome: true,
         showOld,
-        products: [
-            {title: 'Produto X', price: 10},
-            {title: 'Produto Y', price: 15},
-            {title: 'Produto Z', price: 20}
-        ],
+        products: list,
+        expensives: expensiveList,
         lista: [
             'Alguma coisa legal',
             'Alguma coisa legal',

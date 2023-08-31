@@ -23,6 +23,16 @@
 
         <hr/>
 
+        {{! Exibição Lista a partir de um valor }}
+        <h1>Produtos a partir de R$ 12</h1>
+        <ul>
+            {{#expensives}}
+                {{>partials/productItem}}
+            {{/expensives }}
+        </ul>
+
+        <hr/>
+
         {{! Lista comum }}
         <ul>
             {{#lista}}
